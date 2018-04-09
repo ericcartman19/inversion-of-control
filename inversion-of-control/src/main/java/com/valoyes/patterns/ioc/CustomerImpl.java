@@ -15,6 +15,13 @@ public class CustomerImpl implements Customer {
 	// @Autowired
 	CreditCard creditCard;
 	
+	// now testing constructor injection
+	@Autowired
+	public CustomerImpl(CreditCard creditCard) {
+		this.creditCard = creditCard;
+		
+	}
+	
 	@Override
 	public void pay() {
 		creditCard.makePayment();
@@ -25,7 +32,7 @@ public class CustomerImpl implements Customer {
 	}
 
 	// now using Setter @Autowired
-	@Autowired
+	// @Autowired
 	public void setCreditCard(CreditCard creditCard) {
 		this.creditCard = creditCard;
 	}
