@@ -12,12 +12,22 @@ public class CustomerImpl implements Customer {
 	// y lo injectar'a, siempre y cuando la clase a inyectar este marcada con la annotation @Autowired
 	// si en este caso hacemos @Autowired de una interface, Spring es capaz de encontrar una implementacion
 	// de esta interface
-	@Autowired
+	// @Autowired
 	CreditCard creditCard;
 	
 	@Override
 	public void pay() {
 		creditCard.makePayment();
+	}
+
+	public CreditCard getCreditCard() {
+		return creditCard;
+	}
+
+	// now using Setter @Autowired
+	@Autowired
+	public void setCreditCard(CreditCard creditCard) {
+		this.creditCard = creditCard;
 	}
 
 }
